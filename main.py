@@ -56,6 +56,7 @@ model.add(layers.Dense(10, activation='softmax')) # Classify into 10 classes wit
 model.compile(optimizer=optimizers.RMSprop(learning_rate=1e-4), loss='categorical_crossentropy', metrics=['acc'])
 with tf.device('/device:GPU:0'):
       history = model.fit(x_train, y_train, epochs=5, batch_size=20, validation_data=(x_val, y_val))
+model.save('./model')
 model.evaluate(x_test, y_test)
 
 # Plot training & validation accuracy values
