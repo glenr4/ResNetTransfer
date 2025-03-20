@@ -4,9 +4,7 @@
 from keras.datasets import cifar10
 from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
-# from keras.applications.resnet50 import ResNet50, preprocess_input
 from tensorflow.keras.applications import ResNet50
-from tensorflow.keras.applications.resnet50 import preprocess_input
 from keras import models
 from keras import layers
 from keras import optimizers

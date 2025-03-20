@@ -31,3 +31,6 @@ Creating the environment from `environment.yml` should mean that this isn't nece
 1. `pip install --upgrade tensorflow-gpu==2.10.0`
 
 https://stackoverflow.com/a/78351204
+
+### Check GPU
+* Run: `python check_GPU.py`
