@@ -1,5 +1,4 @@
 import tensorflow as tf
-from tensorflow.keras.applications.resnet50 import preprocess_input
 from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
 import matplotlib.pyplot as plt
