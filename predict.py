@@ -26,5 +26,7 @@ predicted_labels = np.argmax(predictions, axis=1)
 true_labels = np.argmax(y_test_categorical, axis=1)
 
 # Generate classification report and confusion matrix
+print('Classification Report')
 print(classification_report(true_labels, predicted_labels))
+print('Confusion matrix')
 print(confusion_matrix(true_labels, predicted_labels))
