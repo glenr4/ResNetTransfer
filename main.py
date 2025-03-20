@@ -45,6 +45,12 @@ x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=0.
 base_model=ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
 # base_model.summary()
 
+# Fine tuning of the model
+# for i, layer in enumerate(base_model.layers):
+#       print(i, layer.name)
+base_model.trainable = True
+fine_tune_at = 143 #  the beginning of the conv5 stage
+
 #Create A Sequential Model
 model = models.Sequential()
 model.add(layers.UpSampling2D(size=(7,7))) # Convert images from 32x32 to 224x224 (ResNet minimum)
@@ -76,4 +82,4 @@ plt.title('Model loss')
 plt.ylabel('Loss')
 plt.xlabel('Epoch')
 plt.legend(loc='upper left')
-plt.show()
+plt.show(False)
