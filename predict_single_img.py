@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras.applications.resnet50 import preprocess_input
+# from tensorflow.keras.applications.resnet50 import preprocess_input
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2  # OpenCV for image manipulation
@@ -23,7 +23,7 @@ image = x_test[image_index]
 true_label = y_test[image_index][0]
 
 # Preprocess the image
-image_preprocessed = image/255
+image_preprocessed = image/255 # Normalise
 # This actually makes the prediction worse
 # image_preprocessed = preprocess_input(image.copy()) # Normalisation, zero-centering, and scaling the pixel values
 image_preprocessed = np.expand_dims(image_preprocessed, axis=0)  # Add batch dimension
