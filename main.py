@@ -48,6 +48,9 @@ base_model=ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224
 #       print(i, layer.name)
 base_model.trainable = True
 fine_tune_at = 143 #  the beginning of the conv5 stage
+# Freeze all the layers before the `fine_tune_at` layer
+for layer in base_model.layers[:fine_tune_at]:
+  layer.trainable = False
 
 #Create A Sequential Model
 model = models.Sequential()
